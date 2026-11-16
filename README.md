@@ -1,80 +1,79 @@
 # Shoeprint-Dataset
 <p align="justify">
-Поиск наиболее схожих изображений следов обуви в базе данных по изображению-запросу предполагает формирование ранжированного списка кандидатов. Эффективным инструментом при сопоставлении различных классов изображений являются нейронные сети. Однако, набор данных для обучения нейронных сетей в приложении к задаче сравнения изображений следов обуви должен включать реальные изображения с учетом факторов: разные следовоспринимающих поверхностей (грунт, снег, плитка, мокрый асфальт, бумага); полные и частичные следы; различные условия освещения, контрастность и разрешение; разные экземпляры одной модели; следы одной модели с отличной между собой степенью износа; изображения следов разных моделей, но с высокой степенью схожести. При этом важным является выработка и применение общих правил съёмки изображений, в том числе: обрезать фотоизображение следа на расстоянии около 0,5 см от его границ, при этом на линейке оставлять только цифры и штрихи; качество съемки – максимальное с наиболее доступным разрешением на используемом техническом средстве и без каких-либо программных операций (инвертирование, отображение по горизонтали, изменение резкости, яркости, контрастности и т.п.);при фотосъёмке оптическая ось объектива должна быть максимально близка к перпендикулярной к фотографируемой поверхности; фотоснимок должен быть резким, без бликов и неравномерного засвечивания следа.
+Shoeprint image retrieval involves generating ranked list of the most similar gallery images. Neural networks are an effective tool for comparing images from classes. A dataset intended for training neural networks for shoeprint image retrieval should include real-world images with the following factors: different impression surfaces (soil, snow, tiles, wet asphalt, and paper); full and partial shoeprints; different lighting conditions, contrast levels, and image resolutions; different shoes items of the same footwear model; shoeprints made by footwear of the same model but with different degrees of wear; and shoeprints from different footwear models that have a high degree of visual similarity. Furthermore, it is important to establish and follow standardized image acquisition protocols.
 </p>
 <p align="justify">
-Датасет состоит из 3 наборов данных, предоставленных Государственным комитетом судебных экспертиз Республики Беларусь (набор DBS2026),
-Полоцким государственным университетом (набор PSU2026) и Витебским государственным университетом (набор VSU2026).
+The dataset consists of three subsets: DBS2026, PSU2026, and VSU2026.
 </p>
 <p align="justify">
-Наборы предоставлены для использования в научно-исследовательской разработке. 
+The datasets are intended for research purposes only. Any use of the datasets must include an appropriate citation.
 </p>
 <p align="justify">
-В каждом наборе одна папка соответствует одной модели обуви. В папке лежат фотографии следов этой модели на разных поверхностях. Номер модели совпадает с именем папки. Номер снимка идёт подряд от 1 внутри этой папки. Формат файлов — JPEG. В начале названия каждого файла префикс набора к которому он принадлежит.
+In each dataset, each folder corresponds to a particular footwear model. The folder contains images of shoeprints made by that model on different surfaces. The model number matches the folder name. Images within each folder are numbered sequentially, starting from 1. All files are in JPEG format. Each filename begins with a prefix identifying the dataset to which the image belongs.
 </p>
 
-| Набор | Моделей | Снимков следов | Снимков подошвы | Всего изображений | Типов Поверхностей |
+| Dataset | Number of Models | Shoeprint Impressions | Sole Image | Total Images | Types of Surfaces |
 |---|---:|---:|---:|---:|---:|
 | DBS2026 | 381 | 2 487 | 759 | 3 246 | 23 |
 | PSU2026 | 176 | 265 | 0 | 265 | 8 |
 | VSU2026 | 13 | 132 | 0 | 132 | 5 |
-| **Вместе** | **570** | **2 884** | **759** | **3 643** |  |
+| **Total** | **570** | **2 884** | **759** | **3 643** |  |
 
-## Во всех трёх наборах 22 типа поверхностей.
-<img width="982" height="915" alt="изображение" src="https://github.com/user-attachments/assets/8df5d2e5-8117-4ebf-9399-60d536ef9794" />
+## A total of 22 distinct surface types are represented across the three datasets.
+<img width="974" height="898" alt="изображение" src="https://github.com/user-attachments/assets/b78a2751-201a-4665-8253-08e9a73fb99c" />
 
 
-# Набор данных DBS2026
-| Поверхность | Снимков | Моделей, где есть |
+
+
+# DBS2026 Dataset
+| Surface | Number of Images | Number of Footwear Models with Images on This Surface |
 |---|---:|---:|
-| Бумага | 636 | 271 |
-| Гипс | 406 | 174 |
-| Снег | 377 | 198 |
-| Тёмная дактилоплёнка | 359 | 178 |
-| Песок | 312 | 146 |
-| Грунт | 115 | 55 |
-| Дерево | 54 | 30 |
-| Керамическая плитка | 53 | 30 |
-| Окрашенное дерево | 42 | 29 |
-| Выявленный дактилопорошком | 33 | 11 |
-| Картон | 28 | 13 |
-| Линолеум | 20 | 8 |
-| Мокрый песок | 19 | 10 |
-| Стекло | 10 | 4 |
-| Окрашенный пол | 6 | 4 |
-| Гранит | 6 | 2 |
-| Тонкий слой снега на тёмной плёнке | 4 | 1 |
-| Гипсовый слепок | 3 | 2 |
-| Порошок | 2 | 1 |
-| Паркет | 1 | 1 |
-| Бумага с узором | 1 | 1 |
-| **Следы, итого** | **2 487** | **381** |
-| Сама подошва | 759 | 381 |
-| **Всего** | **3 246** | **381** |
+| Paper | 636 | 271 |
+| Plaster | 406 | 174 |
+| Snow | 377 | 198 |
+| Fingerprint tape | 359 | 178 |
+| Sand | 312 | 146 |
+| Soil | 115 | 55 |
+| Wood | 54 | 30 |
+| Ceramic tile | 53 | 30 |
+| Colored wood | 42 | 29 |
+| Dactyloscopy powder | 33 | 11 |
+| Cardboard | 28 | 13 |
+| Linoleum | 20 | 8 |
+| Wet sand | 19 | 10 |
+| Glass | 10 | 4 |
+| Colored floor | 6 | 4 |
+| Granite | 6 | 2 |
+| Layer of snow on a darkt ape | 4 | 1 |
+| Plaster cast | 3 | 2 |
+| Powder | 2 | 1 |
+| Parquet | 1 | 1 |
+| Paper with pattern | 1 | 1 |
+| **Total Shoeprint Impressions** | **2 487** | **381** |
+| Sole Image | 759 | 381 |
+| **Total** | **3 246** | **381** |
 
 
-# Набор данных PSU2026
-| Поверхность | Снимков | Моделей, где есть |
+# PSU2026 Dataset
+| Surface | Number of Images | Number of Footwear Models with Images on This Surface |
 |---|---:|---:|
-| Грунт | 116 | 109 |
-| Бумага | 55 | 48 |
-| Песок | 41 | 35 |
-| Снег | 36 | 33 |
-| Дерево | 7 | 7 |
-| Гипс | 5 | 5 |
-| Гранит | 4 | 4 |
-| Керамическая Плитка | 1 | 1 |
-| **Итого** | **265** | **176** |
+| Soil | 116 | 109 |
+| Paper | 55 | 48 |
+| Sand | 41 | 35 |
+| Snow | 36 | 33 |
+| Wood | 7 | 7 |
+| Plaster | 5 | 5 |
+| Granite | 4 | 4 |
+| Ceramic tile | 1 | 1 |
+| **Total** | **265** | **176** |
 
 
-# Набор данных VSU2026
-
-
-| Поверхность | Снимков | Моделей, где есть |
+# VSU2026 Dataset
+| Surface | Number of Images | Number of Footwear Models with Images on This Surface |
 |---|---:|---:|
-| Песок | 70 | 11 |
-| Грунт | 31 | 8 |
-| Асфальт | 27 | 6 |
-| Снег | 2 | 2 |
-| Бумага | 2 | 1 |
-| **Итого** | **132** | **13** |
+| Sand | 70 | 11 |
+| Soil | 31 | 8 |
+| Asphalt | 27 | 6 |
+| Snow | 2 | 2 |
+| Paper | 2 | 1 |
+| **Total** | **132** | **13** |
